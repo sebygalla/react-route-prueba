@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Logo from "../assets/images/logo.png"; // Asegúrate de que la ruta sea correcta
+import Logo from "../assets/images/logoBlanco.png"; // Asegúrate de que la ruta sea correcta
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,15 +10,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-gray-800 text-white">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-gray-800 text-white pt-4 absolute top-0 w-full z-10">
+      <div className="container flex justify-between pr-6 pl-3 items-center bg-amber-400 mx-auto">
         {/* Logo */}
-        <div>
-         
+        
           <Link to="/">
-          <img src={Logo} className="w-40" alt="" />
+          <img src={Logo} className="w-15" alt="" />
           </Link>
-        </div>
+        
         {/* Secciones en dispositivos grandes */}
         <div className="hidden md:flex space-x-6">
           <Link to="/" className="hover:text-gray-400">
@@ -44,8 +43,8 @@ export default function Navbar() {
       </div>
       {/* Menú desplegable para dispositivos pequeños */}
       <div
-        className={`md:hidden bg-gray-800 px-4 pb-4 transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        className={`md:hidden bg-gray-800 text-center px-4 transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-70 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
         <Link
